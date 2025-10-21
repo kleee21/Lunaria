@@ -1,7 +1,3 @@
-// File script.js tidak perlu diubah karena class dan ID HTML sudah disesuaikan
-// dengan logika JavaScript yang sudah ada (Navbar, Scroll Reveal).
-// Pastikan file ini tersimpan sebagai `js/script.js`.
-
 document.addEventListener('DOMContentLoaded', () => {
     const loadingScreen = document.getElementById('loading-screen');
     const mainHeader = document.getElementById('main-header');
@@ -34,22 +30,24 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.addEventListener('keypress', playMusic, { once: true });
 
 
-    // --- 3. LOGIKA NAVBAR SCROLL EFFECT (TAILWIND) ---
+    // --- 3. LOGIKA NAVBAR SCROLL EFFECT (BLUR EFFECT) ---
     const handleScrollNavbar = () => {
         const scrollPosition = window.scrollY; 
         const triggerHeight = 100; 
 
-        // Kelas Awal (Custom Gradien)
-        const initialClass = 'navbar-initial-gradient';
+        // Kelas Awal (Gelap Buram)
+        const initialClass = 'navbar-initial-state';
         
-        // Kelas Scroll (Transparan & Blur menggunakan Tailwind)
-        const scrolledClasses = ['bg-black/20', 'backdrop-blur-md', 'shadow-xl']; 
+        // Kelas Scroll (Transparan Buram/Glassmorphism)
+        const scrolledClass = 'navbar-scrolled-state'; 
 
         if (scrollPosition > triggerHeight) {
+            // Jika di-scroll, ganti ke kondisi Transparan Buram
             mainHeader.classList.remove(initialClass);
-            mainHeader.classList.add(...scrolledClasses);
+            mainHeader.classList.add(scrolledClass);
         } else {
-            mainHeader.classList.remove(...scrolledClasses);
+            // Jika di atas, kembali ke kondisi Gelap Buram
+            mainHeader.classList.remove(scrolledClass);
             mainHeader.classList.add(initialClass);
         }
     };
@@ -100,8 +98,8 @@ function createParticles() {
         particle.style.position = 'absolute';
         particle.style.width = Math.random() * 4 + 2 + 'px';
         particle.style.height = particle.style.width;
-        // Menggunakan skema warna baru: Emas, Perak, Ungu
-        particle.style.backgroundColor = ['#FFD700', '#C0C0C0', '#8A2BE2'][Math.floor(Math.random() * 3)];
+        // Menggunakan skema warna baru: Emas, Merah, Imperial
+        particle.style.backgroundColor = ['#FFC72C', '#B91C1C', '#5B21B6'][Math.floor(Math.random() * 3)];
         particle.style.borderRadius = '50%';
         particle.style.left = Math.random() * 100 + '%';
         particle.style.top = Math.random() * 100 + '%';

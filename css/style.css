@@ -2,15 +2,15 @@
 
 /* ------------------- LATAR BELAKANG FULL BODY (GRADIENT BERGERAK) ------------------- */
 .full-gradient-bg {
-    /* Gradien Lunar Mystical (Fokus pada Midnight, Silver, Gold, Purple) */
+    /* Gradien Lunar Mystical BARU (Midnight, Imperial, Gold, Red) */
     background: linear-gradient(
         -45deg,
-        #0F0F23, /* lunaria-midnight */
-        #1A1A2E, /* lunaria-dark */
-        #8A2BE2, /* lunaria-purple */
-        #FFD700, /* lunaria-gold */
-        #DC143C, /* lunaria-crimson */
-        #0F0F23  /* lunaria-midnight kembali */
+        #0D0D1A, /* lunaria-midnight */
+        #1F2937, /* lunaria-dark */
+        #5B21B6, /* lunaria-imperial */
+        #FFC72C, /* lunaria-gold */
+        #B91C1C, /* lunaria-red */
+        #0D0D1A  /* lunaria-midnight kembali */
     );
     background-size: 400% 400%;
     animation: gradientShift 30s ease infinite;
@@ -25,22 +25,31 @@
     left: 0;
     right: 0;
     bottom: 0;
-    /* Efek kabut lembut dari sudut */
-    background-image: radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.15) 0%, transparent 50%);
+    /* Efek kabut lembut emas dan ungu */
+    background-image: radial-gradient(circle at 20% 80%, rgba(255, 199, 44, 0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(91, 33, 182, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
-/* ------------------- GRADIENT NAVBAR ------------------- */
-.navbar-initial-gradient {
-    /* Gradien untuk NAVBAR Awal (Crimson ke Purple) */
-    background: linear-gradient(90deg,
-        rgba(220, 20, 60, 0.98) 0%, /* lunaria-crimson */
-        rgba(138, 43, 226, 0.98) 100% /* lunaria-purple */
-    ) !important;
-    border-bottom: 2px solid rgba(255, 215, 0, 0.5); /* Border tipis emas */
+/* ------------------- GRADIENT NAVBAR (EFEK BLUR BARU) ------------------- */
+
+/* Kondisi Awal: Agak gelap dan sedikit buram (nuansa Imlek) */
+.navbar-initial-state {
+    background-color: rgba(13, 13, 26, 0.8); /* lunaria-midnight 80% opacity */
+    backdrop-filter: blur(2px); /* Blur lembut */
+    -webkit-backdrop-filter: blur(2px);
+    border-bottom: 1px solid rgba(255, 199, 44, 0.3); /* Border tipis emas buram */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Kondisi Setelah Scroll: Lebih transparan dan buram */
+.navbar-scrolled-state {
+    background-color: rgba(0, 0, 0, 0.2); /* Hitam 20% opacity */
+    backdrop-filter: blur(10px); /* Blur kuat untuk efek Glassmorphism */
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 199, 44, 0.5); /* Border tipis emas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
 
 /* ------------------- GRADIENT SECTION KONTEN ------------------- */
 .line-up-gradient {
@@ -48,10 +57,10 @@
     background: linear-gradient(180deg,
         #FFFFFF 0%,
         #FAFAFA 50%,
-        #FFFDE7 100% /* Sentuhan Emas lembut dari Tailwind*/
+        #FFFDE7 100% 
     );
     position: relative;
-    color: #1A1A2E; /* Menjamin teks gelap terbaca */
+    color: #1F2937; /* Menggunakan lunaria-dark baru */
 }
 
 .line-up-gradient::before {
@@ -61,52 +70,49 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: radial-gradient(circle at 30% 70%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-                      radial-gradient(circle at 70% 30%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
+    background-image: radial-gradient(circle at 30% 70%, rgba(255, 199, 44, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 70% 30%, rgba(91, 33, 182, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
 .tickets-gradient {
-    /* Gradien Gelap untuk Tickets (Ungu ke Gelap) */
+    /* Gradien Gelap untuk Tickets (Imperial ke Dark) */
     background: linear-gradient(180deg,
-        #8A2BE2 0%, /* lunaria-purple */
-        #483D8B 50%, /* dark slate blue */
-        #1A1A2E 100% /* lunaria-dark */
+        #5B21B6 0%, /* lunaria-imperial */
+        #371C79 50%, 
+        #1F2937 100% /* lunaria-dark */
     );
     position: relative;
 }
 
 /* ------------------- HERO SECTION KHUSUS (Background Radial) ------------------- */
 .hero-section {
-    background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, #0F0F23 80%) !important;
+    background: radial-gradient(circle at center, rgba(91, 33, 182, 0.1) 0%, #0D0D1A 80%) !important;
     position: relative;
     overflow: hidden;
 }
-
-.hero-content {
-    /* Untuk memastikan konten di tengah hero selalu di atas */
-    z-index: 20; 
-}
-
 
 /* ------------------- EFEK VISUAL PENTING ------------------- */
 
 /* Text-Shadow Emas Menyala */
 .text-shadow-gold {
     text-shadow: 
-        0 0 5px rgba(255, 215, 0, 0.6), 
-        0 0 15px rgba(255, 215, 0, 0.4), 
-        0 0 25px rgba(255, 215, 0, 0.2); 
+        0 0 5px rgba(255, 199, 44, 0.6), 
+        0 0 15px rgba(255, 199, 44, 0.4), 
+        0 0 25px rgba(255, 199, 44, 0.2); 
     transition: text-shadow 0.5s ease-in-out;
 }
 
 /* Box-Shadow Berwarna untuk Kartu Line-Up & Tiket */
-.shadow-gold-sm { box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
-.shadow-purple-sm { box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3); }
-.shadow-crimson-lg { box-shadow: 0 10px 30px rgba(220, 20, 60, 0.5); }
-.shadow-jade-sm { box-shadow: 0 4px 15px rgba(0, 205, 209, 0.3); }
+.shadow-gold-sm { box-shadow: 0 4px 15px rgba(255, 199, 44, 0.3); }
+.shadow-imperial-sm { box-shadow: 0 4px 15px rgba(91, 33, 182, 0.3); }
+.shadow-red-lg { box-shadow: 0 10px 30px rgba(185, 28, 28, 0.5); }
+.shadow-jade-sm { box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); }
 .shadow-orange-sm { box-shadow: 0 4px 15px rgba(255, 127, 0, 0.3); }
 
+.ticket-card {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
 .ticket-card:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     transform: translateY(-5px) scale(1.02);
@@ -114,41 +120,36 @@
 
 /* Tombol Gradien Kustom */
 .btn-secondary {
-    /* Gradien Purple (default) */
-    background: linear-gradient(45deg, #8A2BE2, #6A0DAD);
-    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+    /* Gradien Imperial (default) */
+    background: linear-gradient(45deg, #5B21B6, #4C1A9D);
+    box-shadow: 0 6px 20px rgba(91, 33, 182, 0.4);
+    transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-    /* Hover jadi Crimson */
-    background: linear-gradient(45deg, #DC143C, #A52A2A);
-    box-shadow: 0 6px 25px rgba(220, 20, 60, 0.6);
+    /* Hover jadi Red */
+    background: linear-gradient(45deg, #B91C1C, #991B1B);
+    box-shadow: 0 6px 25px rgba(185, 28, 28, 0.6);
 }
 
 /* ------------------- ANIMASI TAMBAHAN ------------------- */
+
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-@keyframes pattern-move {
-    from { background-position: 0 0; }
-    to { background-position: 100% 100%; }
-}
-
 @keyframes pulseGlow {
-    0%, 100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.8); }
-    50% { text-shadow: 0 0 25px rgba(255, 215, 0, 1.2); }
+    0%, 100% { text-shadow: 0 0 10px rgba(255, 199, 44, 0.8); }
+    50% { text-shadow: 0 0 25px rgba(255, 199, 44, 1.2); }
 }
 
 .lantern-float {
-    /* Filter shadow pada lentera agar terlihat bersinar */
     animation: lanternGlow 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6));
+    filter: drop-shadow(0 0 5px rgba(255, 199, 44, 0.6));
 }
 
-/* Animasi saat scroll diperkuat */
 .element-to-animate {
     opacity: 0;
     transform: translateY(40px) scale(0.95);
@@ -160,7 +161,6 @@
     transform: translateY(0) scale(1);
 }
 
-/* Pastikan semua delay tetap ada */
 .animation-delay-200 { animation-delay: 0.2s; }
 .animation-delay-400 { animation-delay: 0.4s; }
 .animation-delay-500 { animation-delay: 0.5s; }
